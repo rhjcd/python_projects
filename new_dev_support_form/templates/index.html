@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Catalog - Employee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Service Catalog - Employee</h1>
+        <form id="serviceForm" method="POST">
+            <div class="form-group">
+                <label for="requestedFor">Requested For *</label>
+                <input type="text" id="requestedFor" name="requestedFor" required>
+            </div>
+            <div class="form-group">
+                <label for="requesterEmail">Requester Email *</label>
+                <input type="email" id="requesterEmail" name="requesterEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="region">Region</label>
+                <input type="text" id="region" name="region">
+            </div>
+            <div class="form-group">
+                <label>What do you need help with? *</label>
+                <div class="radio-group">
+                    <input type="radio" id="developerAccess" name="helpNeeded" value="developerAccess" required>
+                    <label for="developerAccess">I need developer access to the Red Hat Demo Platform</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="catalogItem" name="helpNeeded" value="catalogItem">
+                    <label for="catalogItem">I need to Onboard/Change/Retire a Catalog Item</label>
+                </div>
+            </div>
+            <div id="dynamicFields"></div>
+            <div class="form-group">
+                <label for="additionalDetails">Provide additional details</label>
+                <textarea id="additionalDetails" name="additionalDetails"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="colleagues">Colleague(s) to receive request updates</label>
+                <input type="text" id="colleagues" name="colleagues" placeholder="Enter first/last name or email address">
+            </div>
+            <div id="requiredInfo"></div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

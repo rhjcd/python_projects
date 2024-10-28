@@ -1,0 +1,57 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+</head>
+<body>
+    <h1>Success!</h1>
+    <p>This is the success page.</p>
+    <p>Jira URL: {{ jira_url }}</p>
+    <p>Jira Key: {{ jira_key }}</p>
+    <p>AgnosticV URL: {{ agnostic_v_url }}</p>
+    <p>AgnosticD URL: {{ agnostic_d_url }}</p>
+    <p>Catalog Item Policy URL: {{ catalog_item_policy_url }}</p>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="success-container">
+            <div class="success-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Request Submitted Successfully</h2>
+            </div>
+            <p>Your request has been processed. Please find the relevant links below:</p>
+            <div class="links-container">
+                <a href="{{ jira_url }}" id="jiraLink" class="btn btn-primary" target="_blank">
+                    <span><i class="fas fa-ticket-alt"></i> View Jira Issue</span> 
+                    <span class="button-subtext">(*requires internal SSO)</span>
+                </a>
+                <a href="{{ catalog_item_policy_url }}" id="catalogItemPolicyLink" class="btn btn-info" target="_blank">
+                    <span><i class="fas fa-book"></i> Catalog Item Onboarding Policy</span>
+                    <span class="button-subtext">(*requires internal SSO)</span>
+                </a>
+                <a href="{{ agnostic_v_url }}" id="agnosticVLink" class="btn btn-success" target="_blank">
+                    <span><i class="fas fa-code-branch"></i> AgnosticV</span>
+                    <span class="button-subtext">(*requires approved access)</span>
+                </a>
+                <a href="{{ agnostic_d_url }}" id="agnosticDLink" class="btn btn-warning" target="_blank">
+                    <span><i class="fas fa-cogs"></i> AgnosticD</span>
+                    <span class="button-subtext">(*public repo)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
